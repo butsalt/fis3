@@ -22,10 +22,10 @@ cli.launch({
   // 优先查找cwd的node_modules下的fis3，
   // 如果没有找到则查找cwd上一级的node_modules下的fis3
   // 直至root
-  // 如果root没有，则使用全局的node_modules下的fis3
   var fis;
   if (!env.modulePath) {
     fis = require('../');
+  // 如果root没有，则使用全局的node_modules下的fis3
   } else {
     fis = require(env.modulePath);
   }
