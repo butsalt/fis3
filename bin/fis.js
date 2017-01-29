@@ -34,7 +34,7 @@ cli.launch({
 
   // 配置fis.require查找plugin的路径
   // 优先查找本地项目里面的 node_modules
-  // 然后才是全局环境下面安装的 fis3 目录里面的 node_modules
+  // 然后才是当前使用的fis3 目录里面的 node_modules
   fis.require.paths.unshift(path.join(env.cwd, 'node_modules'));
   fis.require.paths.push(path.join(path.dirname(__dirname), 'node_modules'));
   fis.cli.name = this.name;
