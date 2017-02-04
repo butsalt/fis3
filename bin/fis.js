@@ -19,14 +19,14 @@ cli.launch({
   cwd: argv.r || argv.root,
   configPath: argv.f || argv.file
 }, function(env) {
-  // 优先查找cwd的node_modules下的fis3，
-  // 如果没有找到则查找cwd上一级的node_modules下的fis3
-  // 直至root
   var fis;
   if (!env.modulePath) {
+    // 如果直到root还是没有，则使用全局的node_modules下的fis3
     fis = require('../');
-  // 如果root没有，则使用全局的node_modules下的fis3
   } else {
+    // 优先查找cwd的node_modules下的fis3，
+    // 如果没有找到则查找cwd上一级的node_modules下的fis3
+    // 直至root
     fis = require(env.modulePath);
   }
 
